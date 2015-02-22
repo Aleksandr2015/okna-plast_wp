@@ -35,7 +35,7 @@
           <div class="modal-body">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Закрыть</span></button>
             <h4 class="modal-title" id="myModalLabel">Оставьте свои контактные данные <br>и наш менеджер Вам перезвонит</h4>
-            <form class="form-horizontal modal___form" action="z-callback.php" role="form" method="post">
+            <form class="form-horizontal modal___form" action="<?php bloginfo('template_url'); ?>/z-callback.php" role="form" method="post">
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon"><span class="form-icon-name"></span></div>
@@ -61,7 +61,7 @@
           <div class="modal-body">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Закрыть</span></button>
             <h4 class="modal-title" id="myModalLabel">Оставьте свои контактные данные <br>и наш менеджер перезвонит Вам <br> через 15 минут</h4>
-            <form class="form-horizontal modal___form" action="z-callback.php" role="form" method="post">
+            <form class="form-horizontal modal___form" action="<?php bloginfo('template_url'); ?>/z-callback.php" role="form" method="post">
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon"><span class="form-icon-name"></span></div>
@@ -217,7 +217,7 @@
                                Отправьте заявку, и мы перезвоним через 15 минут
                             </span>
                             
-                            <form class="form-horizontal header_main__find_out_the_cost___form" action="z-callback.php" role="form" method="post">
+                            <form class="form-horizontal header_main__find_out_the_cost___form" action="<?php bloginfo('template_url'); ?>/z-callback.php" role="form" method="post">
                                 <div class="form-group">
                                     <div class="input-group">                                  
                                         <div class="input-group-addon"><span class="form-icon-name"></span></div>
@@ -582,10 +582,10 @@
                                 Стоимость: от
                             </span>
                             <span class="popular_offers__offer___prices____price_old">
-                                <strike>3666 грн.</strike>
+                                <strike><?php the_field('position_1_old'); ?>&nbsp;грн.</strike>
                             </span>
                             <span class="popular_offers__offer___prices____price_current">
-                                2200 грн.
+                                <?php the_field('position_1_new'); ?>&nbsp;грн.
                             </span>
                         </div>
                         
@@ -630,10 +630,10 @@
                                 Стоимость: от
                             </span>
                             <span class="popular_offers__offer___prices____price_old">
-                                <strike>3977 грн.</strike>
+                                <strike><?php the_field('position_2_old'); ?>&nbsp;грн.</strike>
                             </span>
                             <span class="popular_offers__offer___prices____price_current">
-                                2386 грн.
+                               <?php the_field('position_2_new'); ?>&nbsp;грн.
                             </span>
                         </div>
                         
@@ -675,10 +675,10 @@
                                 Стоимость: от
                             </span>
                             <span class="popular_offers__offer___prices____price_old">
-                                <strike>5333 грн.</strike>
+                                <strike><?php the_field('position_3_old'); ?>&nbsp;грн.</strike>
                             </span>
                             <span class="popular_offers__offer___prices____price_current">
-                                3200 грн.
+                                <?php the_field('position_3_new'); ?>&nbsp;грн.
                             </span>
                         </div>
                         
@@ -719,10 +719,10 @@
                                 Стоимость: от
                             </span>
                             <span class="popular_offers__offer___prices____price_old">
-                                <strike>5340 грн.</strike>
+                                <strike><?php the_field('position_4_old'); ?>&nbsp;грн.</strike>
                             </span>
                             <span class="popular_offers__offer___prices____price_current">
-                                3204 грн.
+                                <?php the_field('position_4_new'); ?>&nbsp;грн.
                             </span>
                         </div>
                         
@@ -754,7 +754,7 @@
                                Как подобрать пластиковые окна за 30 минут и точно рассчитать размер?
                             </span>
                             
-                           <form class="form-horizontal header_main__find_out_the_cost___form" action="z-callback.php" role="form" method="post">
+                           <form class="form-horizontal header_main__find_out_the_cost___form" action="<?php bloginfo('template_url'); ?>/z-callback.php" role="form" method="post">
                                 <div class="form-group">
                                     <div class="input-group">                                  
                                         <div class="input-group-addon"><span class="form-icon-name"></span></div>
@@ -1575,7 +1575,7 @@
                            и мы перезвоним вам через 20 минут
                         </span>
                             
-                        <form class="form-horizontal header_main__find_out_the_cost___form" action="z-callback.php" role="form" method="post">
+                        <form class="form-horizontal header_main__find_out_the_cost___form" action="<?php bloginfo('template_url'); ?>/z-callback.php" role="form" method="post">
                             <div class="form-group">
                                 <div class="input-group">                                  
                                     <div class="input-group-addon"><span class="form-icon-name"></span></div>
@@ -1670,9 +1670,13 @@
                         </span>
                     </div>
                     
-                    <div class="col-xs-12">
+                    <div class="col-xs-12" style="position:relative;">
                         
                         <div class="header_main__button ___button_callback pull-right clearfix" data-toggle="modal" data-target="#z-callback">Заказать обратный звонок</div>
+                        
+                        <a href="/wp-admin" class="glyphicon glyphicon-pencil" style="text-decoration:none;position:absolute; top:21px; left:0;"></a>
+                        
+                        
                         
                     </div>
                 

@@ -13,6 +13,7 @@ if( !current_user_can( 'edit_users' ) ){
 	add_filter( 'pre_option_update_core', create_function( '$a', "return null;" ) );
 	// для 3.0+
 	add_filter( 'pre_site_transient_update_core', create_function( '$a', "return null;" ) );
+  
 }
 
 //Удаление из верхней панели :
@@ -49,7 +50,22 @@ function my_remove_menu_pages() {
       global $menu;
       $menu = array();  // Очищаем массив с пунктами меню
       // скрываем панль
-      echo "<style type='text/css'>#adminbarsearch, #adminmenuwrap, #adminmenuback{display:none!important;} #wpcontent{margin-left:10px!important;}</style>";
+      echo "
+        <style type='text/css'>
+        #adminbarsearch, /* поиск */
+        #adminmenuwrap, /* меню */
+        #adminmenuback,
+        #pageparentdiv,
+        #delete-action,
+        #minor-publishing,
+        #screen-options-link-wrap,
+        #contextual-help-link-wrap,
+        #wpbody .wrap>h2,
+        #post-body-content
+        { display:none!important; } 
+        #publishing-action, #publishing-action input[type=submit] { width:100%; }         
+        
+        #wpcontent{margin-left:10px!important;}</style>";
     }
     add_action('admin_head', 'my_remove_adminmenu');    
 
